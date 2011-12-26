@@ -52,7 +52,7 @@ tunnel_ns = namespace :tunnelr do
    if !File.exists?(tunnelr_config)
      puts "No config file, try running tunnelr:setup"
    else
-     TUNNELR = YAML.load(ERB.new(File.read(tunnelr_config)).result)[RAILS_ENV]
+     TUNNELR = YAML.load(ERB.new(File.read(tunnelr_config)).result)[Rails.env]
      @public_host_username = TUNNELR['public_host_username'] 
      @public_host = TUNNELR['public_host'] 
      @public_port = TUNNELR['public_port'] 
